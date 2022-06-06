@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script language="javascript">
+        function displayValue() {
+            alert("You entered: " + document.form1.txtName.value);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        alert("This is called in body directly");
+        function confirmation() {
+            answer = confirm("Are you sure?");
+            alert(answer);
+        }
+    </script>
+    <script src="mysource.js">
+        /*function displaySomething(){
+            alert("This is a demo alert");
+        }*/
+
+    </script>valueme" />
+        <input type="button" value="Click Me!" onclick="displayValue();" />
+        <br>
+        <br>
+        <input type="button" value="Just Alert" onclick="displaySomething();" />
+        <br>
+        <br>
+        <input type="button" value="Confirm" onclick="confirmation();" />
+        <br>
+        <br>
+        <a href="javascript:displaySomething()">Click me!</a>
+    </form>
+</body>
+
+</html>
