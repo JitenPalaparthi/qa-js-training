@@ -34,7 +34,39 @@
                 alert("Num is less than 1");
             } else {
                 alert("Num is bigger than one");
+
             }
+        }
+
+        function CheckSwitchCase() {
+            var day=0; //= Math.random();
+            //switch (new Date().getDay()) {
+            switch (Math.random()) {
+                case 0:
+                    day = "Sunday";
+                    break;
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    Anything
+                    day = "Saturday";
+                default:
+                    day = null;
+            }
+            alert(day);
         }
 
     </script>
@@ -45,6 +77,9 @@
     <br>
     <br>
     <input type="button" value="Check Basic If-ElseIf-Else" onclick="CheckIfElseIf();" />
+    <br>
+    <br>
+    <input type="button" value="Check Basic SwitchCase" onclick="CheckSwitchCase();" />
 </body>
 
 </html>
