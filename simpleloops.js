@@ -59,5 +59,7 @@ for(let c of str){
 console.log(rstr)
 
 // Write a simple program to find number of spaces in a string using while and for loop
-
 // Input= "Hello World How are you doing?" Output = 5
+
+// Write a program to count number of words in a sentence 
+// Input= "Hello World How are you doing?" Output = 6
