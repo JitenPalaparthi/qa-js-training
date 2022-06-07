@@ -84,3 +84,21 @@ ages[2]=38;
 for(var i=0;i<names.length;i++){
     console.log("Name is ",names[i],"and age is",ages[i]);
 }
+
+// To create an object
+
+var employee = new Object();
+console.log(MyObject(employee));
+
+var e1 = employee
+
+e1.name="Pala"
+
+console.log(e1)
+console.log(employee);
+
+e2=MyObject(null)
+console.log(e2);
+
+
+
