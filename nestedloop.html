@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+function ConstructTable(){
+       var button = '<input type="button" value="Construct" onclick="ConstructTable();"/>'
+        var table = "<div>"
+
+        for (var row = 1; row <= 10; row++) {
+
+            table += "<div>";
+            for (var col = 1; col <= 10; col++) {
+                table += row * col + " "
+            }
+            table += "</div>";
+        }
+        table += "</div>";
+        document.write(button+table);
+    }
+    </script>
+
+
+<input type="button" value="Construct" onclick="javascript:document.clear();ConstructTable();"/>
+
+</body>
+
+</html>
