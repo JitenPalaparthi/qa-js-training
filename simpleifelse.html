@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>If Else Demo</title>
+</head>
+
+<body>
+    <script>
+        function CheckIfElse1() {
+            var answer = confirm("Are you sure?");
+            if (answer) {
+                alert("Yes it is confirmed");
+            } else {
+                alert("No it is not confirmed");
+            }
+        }
+
+        function CheckIfElse2() {
+            var answer = confirm("Are you sure?");
+            if (answer == 1) {
+                //if (answer === 1) { // This also checks the datatype. The datatype of answer is boolean but here the comparison is happening against number
+                alert("Yes it is confirmed");
+            } else {
+                alert("No it is not confirmed");
+            }
+        }
+
+        function CheckIfElseIf() {
+            var num = Math.random() * 2;
+            if (num === 1) {
+                alert("Both are same");
+            } else if (num < 1) {
+                alert("Num is less than 1");
+            } else {
+                alert("Num is bigger than one");
+            }
+        }
+
+    </script>
+    <input type="button" value="Check Basic If-Else" onclick="CheckIfElse1();" />
+    <br>
+    <br>
+    <input type="button" value="Check Basic If-Else(0|1)" onclick="CheckIfElse2();" />
+    <br>
+    <br>
+    <input type="button" value="Check Basic If-ElseIf-Else" onclick="CheckIfElseIf();" />
+</body>
+
+</html>
