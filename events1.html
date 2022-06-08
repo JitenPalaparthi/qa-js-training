@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Events demo1</title>
+</head>
+
+<body>
+    <script>
+        function ValidateDrink(thisForm) {
+            var id = document.getElementById("divInfo")
+            if (thisForm.RadioDrink[2].checked && (thisForm.CheckMilk.checked || thisForm.CheckSuger.checked)) {
+                //                alert("Soup cannot be made with milk and suger")
+                id.innerHTML = '<h3>Soup cannot be made with the milk and suger</h3>'
+                //id.innerText="Soup cannot be made with milk and suger";
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <form name="myform" method="get" onsubmit="return ValidateDrink(this);">
+        <input type="radio" checked name="RadioDrink" value="Tea" />Tea
+        <input type="radio" name="RadioDrink" value="Coffee" />Coffee
+        <input type="radio" name="RadioDrink" value="Soup" />Soup
+        <input type="checkbox" name="CheckMilk" value="Yes" />Milk
+        <input type="checkbox" name="CheckSugar" value="Yes" />Sugar
+        <input type="submit" name="OKButton" value="Vend" />
+    </form>
+    <div id="divInfo"></div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Events demo1</title>
+</head>
+
+<body>
+    <noscript>
+        <p>
+        If you can read this, either your browser cannot handle
+        scripts or you have turned scripting off.
+        </p>
+        </noscript>
+    <script>
+        function ValidateDrink(thisForm) {
+            var id = document.getElementById("divInfo")
+            if (thisForm.lstDrink.value == "Select a Drink") {
+                id.innerHTML = '<h3>Select a drink Tea|Coffee|Soup to Vend</h3>'
+                //id.innerText="Soup cannot be made with milk and suger";
+                return false;
+            }
+            if (thisForm.lstDrink.value == "Soup" && (thisForm.CheckMilk.checked || thisForm.CheckSugar.checked)) {
+                //                alert("Soup cannot be made with milk and suger")
+                id.innerHTML = '<h3>Soup cannot be made with the milk and suger</h3>'
+                //id.innerText="Soup cannot be made with milk and suger";
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <form name="myform" method="get" onsubmit="return ValidateDrink(this);">
+        <select name="lstDrink">
+            <option>Select a Drink</option>
+            <option>Tea</option>
+            <option>Coffee</option>
+            <option>Soup</option>
+        </select>
+        <input type="checkbox" name="CheckMilk" value="Yes" />Milk
+        <input type="checkbox" name="CheckSugar" value="Yes" />Sugar
+        <input type="submit" name="OKButton" value="Vend" />
+    </form>
+    <div id="divInfo"></div>
+</body>
+
+</html>

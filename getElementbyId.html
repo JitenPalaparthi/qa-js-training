@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <titile>
-            Get Element by Id demo
-        </titile>
-    </head>
-    <body>
-<script>
-    function DisplayInnerText(id){
-        const txt = document.getElementById(id);
-        alert(txt.innerText);
-    }
-    function DisplayInnerHTML(id){
-        const txt = document.getElementById(id);
-        alert(txt.innerHTML);
-    }
-    function DisplayAttributeValue(id,attr){
-        const txt = document.getElementById(id);
-        alert(txt.getAttribute(attr));
-    }
-</script>
-<div id="div1">
-<h1 id="h1id" onclick='DisplayInnerText("h1id");'>This is called Heading1</h1>
-<input type="button" id="b1" value="H1 Click" onclick='DisplayAttributeValue("b1","value");'/>
-<input type="button" id="b2" value="div Click" onclick='DisplayInnerHTML("div1");'/>
-</div>
+
+<head>
+    <titile>
+        Get Element by Id demo
+    </titile>
+</head>
+
+<body>
+    <script>
+        var count = 0;
+        var colors = ["yellow", "red", "blue", "green", "pink"]
+        function DisplayInnerText(id) {
+            const txt = document.getElementById(id);
+            alert(txt.innerText);
+        }
+        function DisplayInnerHTML(id) {
+            const txt = document.getElementById(id);
+            alert(txt.innerHTML);
+        }
+        function DisplayAttributeValue(id, attr) {
+            const txt = document.getElementById(id);
+            alert(txt.getAttribute(attr));
+        }
+
+        function ChangeBGColor(element) {
+            const id = document.getElementById(element);
+            id.style.backgroundColor = colors[count];
+            count==4?count=0:count++; // terinary operator instead of if-else
+           /* if (count == 4) { count = 0; } else {
+                count++;
+            }*/
+            
+        }
+    </script>
+    <div id="div1">
+        <h1 id="h1id" onclick='DisplayInnerText("h1id");'>This is called Heading1</h1>
+        <input type="button" id="b1" value="H1 Click" onclick='DisplayAttributeValue("b1","value");' />
+        <input type="button" id="b2" value="Change Color" onclick='ChangeBGColor("div1");' />
+    </div>
 </body>
+
 </html>
