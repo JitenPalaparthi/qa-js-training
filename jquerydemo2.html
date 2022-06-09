@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () { // to make sure that the document is ready .. 
+            /*  $("p,h3 u,h4").click(function () {
+                  alert("There is no specific news as such");
+              });*/
+            $("div span").click(function () {
+                alert("There is a political drama happening in London");
+            });
+            $("#div1").click(function () {
+                alert($("#div1").html());
+            });
+            $("#b1").click(function () {
+               $("#p1").css('background-color', 'red');
+               // alert(l);
+            });
+        });
+    </script>
+</head>
+
+<body>
+     <div id="div1">
+        - The News -
+       <p>
+        <h4>What is today's news</h4>
+        </p>
+        <p>
+        <h4>Sports news</h4>
+        </p>
+        <p>
+        <h4>International news</h4>
+        </p>
+    </div>
+    <p id="p1">
+        Today's news 
+        </p>
+    <div><span>Political news</span></div>
+    <input type="button" id="b1" value="Get Length"/>
+</body>
+
+</html>

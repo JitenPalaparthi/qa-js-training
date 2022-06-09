@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script src="scripts/jquery-3.6.0.js"></script>
+<script>
+
+function OnSubmit(){
+    if($("input[name=gender]:checked").val()=="m"){
+        alert("Selected gender is Male");
+    }else{
+        alert("Selected gender is Female");
+    }
+
+    // Write the application specially using jQuery
+    // Tea,Coffee,Soup(Radio) [Milk][Suger](Check Boxes) Vend(Button)
+    // If Tea or Coffee is selected , Milk and Suger can be added so that When Vend is clicked 
+    // It should say that Vending Tea or Coffee with Milk And or With Suger Based on selection
+    // If soup is selected then after selecting Milk or and Suger, 
+    // upon clicking on Vend it should say that Milk and Suger cannot be added to the Soup.
+    // For Soup milk and or suger is not selected then it should say Vending Soup
+}
+
+</script>
+    </head>
+    <body>
+        <form onsubmit="OnSubmit();">
+            M:<input type="radio" name="gender" value="m"/>
+            F:<input type="radio" name="gender" value="f"/>
+            <input type="submit"/>
+        </form>
+    </body>
+</html>

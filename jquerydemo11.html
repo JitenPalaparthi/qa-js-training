@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>Selection demo</title>
+
+<head>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        /*function OnSelection() {
+            if($("#options option:selected").index()!=0){
+            alert("The selected Index is "+ $("#options option:selected").index()+ " selected value is " + $("#options option:selected").text());
+            }
+        }*/
+        // Enable either the above one or the below one..
+        $("document").ready(function () {
+            $("#submit").click(function () {
+                if ($("#options option:selected").index() != 0) {
+                    alert("The selected Index is " + $("#options option:selected").index() + " selected value is " + $("#options option:selected").text());
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!--<form onsubmit="OnSelection();">  -->
+    <div>
+        <select id="options">
+            <option>Select A Country</option>
+            <option>United Kingdom</option>
+            <option>United Arab Emirates</option>
+            <option>United States of America</option>
+            <option>India</option>
+            <option>Kenya</option>
+        </select>
+        <button id="submit">Submit</button>
+        <!--<input type="submit" />-->
+        <!--<input type="button" value="Submit" onclick="OnSelection();" />-->
+    </div>
+    <!-- </form> -->
+
+</body>
+
+</html>

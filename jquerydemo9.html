@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script>
+         $("document").ready(function(){
+            $("#btn").click(function(){
+                var age = parseInt($("#age").val())+1;
+                //alert(age);
+                $("#age").val(age);
+            });
+         });       
+        </script>
+    </head>
+    <body>
+        Name: <input type="text" id="txt" value=""/>
+        Age: <input type="text" id="age" value="0"/>
+        <button id="btn">Increase Age</button>
+   </body>
+</html>
