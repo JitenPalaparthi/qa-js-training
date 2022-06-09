@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .transform30 {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            transform: rotate(30deg);
+        }
+    </style>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        var num = 1;
+        function ApplyStyle() {
+            //alert(num / 2 );
+            var myStyle = {
+                color: 'Red',
+                'font-size': '14pt',
+                position: 'absolute',
+                left: '100px',
+                top: '100px',
+                'transform': 'rotate(30deg)',
+                width: '80px',
+                height: '40px'
+            };
+
+            if ($("#mydiv").hasClass('transform30')) {
+                $("#mydiv").removeClass('transform30');
+            }else{
+                $("#mydiv").removeAttr('style');
+            }
+            if (num % 2 == 0) {
+                $("#mydiv").css(myStyle);
+            } else {
+                $("#mydiv").addClass('transform30');
+            }
+            num++;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="mydiv">Welcome to QA</div>
+    <button onclick="ApplyStyle();">Apply Style</button>
+</body>
+
+</html>

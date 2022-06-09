@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        function ApplyStyle() {
+            var myStyle = {
+                color: 'Red',
+                'font-size': '14pt',
+                position: 'absolute',
+                left: '100px',
+                top: '100px',
+                'transform': 'rotate(30deg)',
+                width: '80px',
+                height: '40px'
+            };
+            $("#mydiv").css(myStyle);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="mydiv">Welcome to QA</div>
+    <button onclick="ApplyStyle();">Apply Style</button>
+</body>
+
+</html>

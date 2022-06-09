@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Dynamically add elements</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $("document").ready(function () {
+            $("#btn").click(function () {
+                //$("li").remove(); // This removes all li elements in the document.To avoid that use a specific selector such as class..
+                $(".remove").remove();
+                var range = parseInt($("#txt").val());
+                for (let i = 1; i <= range; i++) {
+                    $("<li class ='remove'> Option-" + i + "</li>").appendTo("#menu");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="txt" value="10" />
+    <button id="btn">Generate List</button>
+    <ul>
+        <li>Red</li>
+        <li>Green</li>
+        <li>Blue</li>
+    </ul>
+    <ul id="menu">
+    </ul>
+</body>
+
+</html>
