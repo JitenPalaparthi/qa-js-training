@@ -1,0 +1,17 @@
+<html>
+</head>
+<script src="scripts/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function () {
+$("#div1").click(function (e) {
+alert($(e.target));
+// or simply:
+alert($(this).text());
+});
+});
+</script>
+</head>
+<body>
+<div id="div1">Click on this text!</div>
+</body>
+</html>
