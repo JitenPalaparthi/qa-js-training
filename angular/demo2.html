@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope) {
+            $scope.message = "Hello World!";
+            $scope.content="No content as such";
+            $scope.student={"name":"Jiten","email":"JitenP@Outlook.Com"}
+        }
+        myModule.controller("myController", myController);
+    </script>
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <!-- <div>{{ message }}</div>
+    <div>{{ content }}</div> -->
+    <div>
+    <div>Name:</div><div>{{student.name}}</div>
+    <div>Email:</div><div>{{student.email}}</div>
+    </div>
+</body>
+</html>

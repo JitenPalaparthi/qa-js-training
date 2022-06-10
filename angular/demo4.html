@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope) {
+            $scope.myClick = function () {
+                alert("clicked");
+            }
+            $scope.myMousedown = function () {
+                alert("mouse down");
+            }
+        }
+        myModule.controller("myController", myController);
+    </script>
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <button ng-click="myClick()" ng-mousedown="myMousedown()">Save</button>
+</body>

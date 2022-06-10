@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope, $http) {
+            $scope.doClick = function () {
+                $http({
+                    method: "Get", url: 'http://localhost:5000/getorders/'
+                }).then(function (response) {
+                    $scope.orders = response.data;
+                }, function (reason) {
+                    $scope.error = "Unable to extract customers data";
+                    console.log("Some error-->",reason.status + ',' + reason.statusText);;
+                });
+            }
+        }
+            myModule.controller("myController", myController);
+    </script>
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+    <button ng-click="doClick()">Get Customers</button>
+    <table>
+        <tr>
+            <td>OrderID</td>
+            <td>CustomerID</td>
+            <td>EmployeeID</td>
+            <td>ShipName</td>
+            <td>ShipAddress</td>
+            <td>ShipPostalCode</td>
+        </tr>
+        <tr ng-repeat="ord in orders">
+            <td>{{ord.OrderID}}</td>
+            <td>{{ord.CustomerID}}</td>
+            <td>{{ord.EmployeeID}}</td>
+            <td>{{ord.ShipName}}</td>
+            <td>{{ord.ShipAddress}}</td>
+            <td>{{ord.ShipPostalCode}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>
