@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $("document").ready(function () {
+            alert("Test")
+            $(function () {
+                $.get({
+                    //type: "GET",
+                    url: "http://localhost:5000/getorders/",
+                    xhrFields: {
+                        'Access-Control-Allow-Origin': '*'
+                                            },
+                    success: function (msg) {
+                         $("#divInfo").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="divInfo"></div>
+
+</body>
+
+</html>

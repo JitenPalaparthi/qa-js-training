@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        var table = "<table><tr><td>SL.No</td><td>OrderID</td><td>CustomerID</td><td>EmployeeID</td><td>ShipName</td><td>ShipAddress</td><td>Delete</td><tr>"
+        function DeleteByOrderId() {
+            alert("Delete order by ID:");
+        }
+        $("document").ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:5000/getorders/",
+                dataType: "json",
+                success: function (orders) {
+                    /*for (var i = 0; i < orders.length; i++) {
+                        table += ""<tr><td>"+(i+1)+"</td><td>" + orders[i].OrderID + "</td><td>" + orders[i].CustomerID + "</td><td>" + orders[i].EmployeeID + "</td><td>" + orders[i].ShipName + "</td><td>" + orders[i].ShipAddress + "</td><td><Button onclick='DeleteByOrderId();'>Delete</Button></td></tr>"
+                    }*/
+                    $.each(orders, function (i, ord) {
+                        table += "<tr><td>" + (i + 1) + "</td><td>" + ord.OrderID + "</td><td>" + ord.CustomerID + "</td><td>" + ord.EmployeeID + "</td><td>" + ord.ShipName + "</td><td>" + ord.ShipAddress + "</td><td><Button onclick='DeleteByOrderId();'>Delete</Button></td></tr>"
+                    })
+                    table += "</table>"
+                    $("#divInfo").html(table);
+                }
+            }).fail(function () {
+                alert("Its a fail call");
+
+            }).always(function () {
+                alert("It runs always");
+            });
+
+            // $.getJSON("http://localhost:5000/getorders/",function(orders){
+            //         $.each(orders, function (i, ord) {
+            //             table += "<tr><td>"+(i+1)+"</td><td>" + ord.OrderID + "</td><td>" + ord.CustomerID + "</td><td>" + ord.EmployeeID + "</td><td>" + ord.ShipName + "</td><td>" + ord.ShipAddress + "</td><td><Button onclick='DeleteByOrderId();'>Delete</Button></td></tr>"
+            //         })
+
+            //         table += "</table>"
+            //         $("#divInfo").html(table);
+            //     })
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="divInfo"></div>
+
+</body>
+
+</html>
+
+<!--
+Issues on localhost
+
+1- CORS : Cross Origin Requsts
+2- When both the client and server are on the same host, then usually browsers dont accept those calls
+3- How to solve that 
+    - Look for any extensions on your browsers
+    - start your browser without security
+    - On Linux : google-chrome  --user-data-dir=/tmp --disable-web-security
+    - On Mac: open -n -a /Applications/Google\ Chrome.app --args --user-data-dir="/tmp/someFolderName" --disable-web-security
+    - On Windows: chrome.exe --disable-web-security
+    {
+        "OrderID": 10248,
+        "CustomerID": "VINET",
+        "EmployeeID": 5,
+        "OrderDate": "/Date(836434800000)/",
+        "RequiredDate": "/Date(838854000000)/",
+        "ShippedDate": "/Date(837471600000)/",
+        "ShipVia": 3,
+        "Freight": 32.38,
+        "ShipName": "Vins et alcools Chevalier",
+        "ShipAddress": "59 rue de l'Abbaye",
+        "ShipCity": "Reims",
+        "ShipRegion": null,
+        "ShipPostalCode": "51100",
+        "ShipCountry": "France"
+    },
+
+
+
+
+-->
